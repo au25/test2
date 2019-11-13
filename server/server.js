@@ -1,3 +1,4 @@
+const { createServer } = require("http");
 const express = require('express');
 const helmet = require('helmet')
 const bodyParser = require('body-parser');
@@ -34,10 +35,12 @@ app.use('/', routes);
 
 app.use(express.static(path.join(__dirname, '/../client/build')));
 app.get('/', (req, res) => {
-  res.sendfile(path.join(__dirname = '/../client/build/index.html'));
+  res.sendFile(path.join(__dirname = '/../client/build/index.html'));
 })
 
 // *************************************************************** //
+
+const server = createServer(app);
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
