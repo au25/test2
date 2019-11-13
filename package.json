@@ -1,0 +1,21 @@
+{
+  "name": "tempify",
+  "version": "1.0.0",
+  "description": "To start the application (run both client and server concurrently)",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "start": "cd server && node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/au25/test2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/au25/test2/issues"
+  },
+  "homepage": "https://github.com/au25/test2#readme"
+}

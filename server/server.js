@@ -3,8 +3,9 @@ const helmet = require('helmet')
 const bodyParser = require('body-parser');
 const Promise = require('promise');
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 const routes = require('./routes/routes');
+const path = require('path');
 
 app.use(helmet());
 app.use(bodyParser.urlencoded({
@@ -31,10 +32,10 @@ app.use('/', routes);
 // *************************************************************** //
 //                    Serving Our Build File                       //  
 
-// app.use(express.static(path.join(__dirname, '/../client/build')));
-// app.get('/', (req, res) => {
-//   res.sendfile(path.join(__dirname = '/../client/build/index.html'));
-// })
+app.use(express.static(path.join(__dirname, '/../client/build')));
+app.get('/', (req, res) => {
+  res.sendfile(path.join(__dirname = '/../client/build/index.html'));
+})
 
 // *************************************************************** //
 
